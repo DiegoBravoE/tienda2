@@ -14,14 +14,15 @@ const Home = () => {
   
   const [categories,setCategories]=useState([]);
   useEffect(() => {
-    dispatch(getProducts());
-
-    axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/categories/`)
+    
+    axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/categories`)
     .then((res)=>setCategories(res.data.data.categories))
-
+    
+    dispatch(getProducts());
   });
 
  
+ console.log(products)
 
   const filterTitle = () => {
     

@@ -8,23 +8,23 @@ import {Card,Row, Col} from "react-bootstrap";
 
 
 const ProductDetail = () => {
-const[products,setProducts]=useState([])
+const[products,setProducts]=useState([]);
 
 const{id}=useParams()
 const dispatch=useDispatch()
 
 const productsList=useSelector(state=>state.products)
 useEffect(()=>{
+  axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
+  .then((res)=>
+     {const productSearch = res.data.find(productsItem=>productsItem.id===Number(id))
+  setProducts(productSearch)
+    dispatch(filterCategory(res.data.data.category))
+    }
 
-    axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}`)
-    .then(res=>{
-        setProducts(res.data.data.product);
-      dispatch(filterCategory(res.data.data.products))
-  // const productItem= productList.find(products=>products.id===Number(id))
- //  setProducts(productItem)
-    })
-})
-console.log(products)
+  )
+},[dispatch,id])
+ console.log(products)
     return (
       <div className="card-detail">
         <h1>{products.title}</h1>
