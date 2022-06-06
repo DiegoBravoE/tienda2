@@ -39,13 +39,17 @@ justify-content: center;
   height: max-content;
   border-bottom: 1px  solid rgba(0, 0, 0, 0.541);
 }
-
+.description::-webkit-scrollbar{
+  width: 9px;
+ 
+}
 .description{
 
   margin: 10px;
   border-top: 1px  solid rgba(0, 0, 0, 0.425);
-  overflow: hidden;
+  overflow: auto;
 }
+
 .read-more{
   margin: auto;
 }
