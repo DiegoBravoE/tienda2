@@ -19,7 +19,7 @@ useEffect(()=>{
   .then((res)=>
      {const productSearch = res.data.data.products.find(productsItem=>productsItem.id===Number(id))
   setProducts(productSearch)
-    dispatch(filterCategory(res.data.data.category))
+    dispatch(filterCategory(res.data.category.id))
     }
 
   )
