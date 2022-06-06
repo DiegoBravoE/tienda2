@@ -19,10 +19,9 @@ const Home = () => {
     .then((res)=>setCategories(res.data.data.categories))
     
     dispatch(getProducts());
-  });
+  },[dispatch]);
 
  
- console.log(products)
 
   const filterTitle = () => {
     

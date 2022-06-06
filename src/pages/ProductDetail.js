@@ -17,14 +17,14 @@ const productsList=useSelector(state=>state.products)
 useEffect(()=>{
   axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
   .then((res)=>
-     {const productSearch = res.data.find(productsItem=>productsItem.id===Number(id))
+     {const productSearch = res.data.data.products.find(productsItem=>productsItem.id===Number(id))
   setProducts(productSearch)
     dispatch(filterCategory(res.data.data.category))
     }
 
   )
 },[dispatch,id])
- console.log(products)
+
     return (
       <div className="card-detail">
         <h1>{products.title}</h1>
