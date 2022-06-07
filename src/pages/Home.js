@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import cart from '../images/cart.svg';
 import {
   getProducts,
   filterProducts,
@@ -83,21 +84,16 @@ const Home = () => {
                     <img src={product.productImgs} alt="" />
                   </div>
                 </div>
-                <div className="description">
-                  <p>
-                    <strong>{product.description}</strong>{" "}
-                  </p>
-                </div>
-                <div className="read-more">
-                  <button type="button" className="btn btn-outline-danger">
-                    Ver mas
-                  </button>
-                </div>
+
                 <div className="price">
-                  <button type="button" class="btn btn-primary">
-                    $ {product.price}
-                  </button>
+                  <div>
+                    <p>Price</p>
+                  </div>
+                  <p>$ {product.price}</p>
                 </div>
+                  <div className="cart">
+                    <img src={cart} alt="" />
+                  </div>
               </div>
             ))}
           </Row>
