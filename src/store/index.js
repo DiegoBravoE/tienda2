@@ -6,6 +6,6 @@ export default configureStore({
   reducer: {
     isLoading,
     products,
-    purchase
+    purchase,
   }
 });
