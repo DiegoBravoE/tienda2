@@ -8,6 +8,17 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
+.container-navbar{
+  display: flex;
+  align-items: center;
+  
+}
+.iconos{
+  width: 470px;
+  display: flex;
+
+  
+}
 .iconos img{
   width: 30px;
 }
@@ -34,7 +45,8 @@ display: flex;
 justify-content: center;
 }
 .img-detail{
-  height: 400px;
+  width: 350px;
+  height: 250px;
   display: flex;
  margin:auto;
  
@@ -78,7 +90,22 @@ justify-content: center;
   width: 9px;
  
 }
-
+.card-login{
+  
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 450px;
+}
+.button-login{
+  border: none;
+  border-radius: 5px;
+  background-color:tomato;
+  padding:5px;
+  width:80px;
+  margin: auto;
+}
 
 .price{
  

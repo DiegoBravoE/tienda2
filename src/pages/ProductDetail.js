@@ -31,7 +31,7 @@ const ProductDetail = () => {
         <div className="container">
       <Row xs={1} md={2} className="card-detail">
 
-        <div>
+        <div  className="container">
           
           <img src={products.productImgs} alt="" className="img-detail" />
         </div>
