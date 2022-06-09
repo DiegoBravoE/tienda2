@@ -6,12 +6,15 @@ import { filterCategory } from "../store/slices/products.slice";
 import { Card, Row } from "react-bootstrap";
 import cart from '../images/cart.svg';
 import cartAdd from '../images/cartAdd.svg';
+import { addToCart } from "../store/slices/cart.slice";
+
 
 const ProductDetail = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
+const [quantity,setQuantity]= useState("1")
 
   const productsList = useSelector((state) => state.products);
   useEffect(() => {
@@ -25,6 +28,15 @@ const ProductDetail = () => {
         dispatch(filterCategory(productSearch.category.id));
       });
   }, [dispatch, id]);
+
+  const addProductsCart = ()=>{
+    const addproduct={
+       id,
+       quantity
+    }
+    dispatch(addToCart(addproduct))
+console.log(addproduct)
+  }
 
   return (
     <div>
@@ -51,12 +63,12 @@ const ProductDetail = () => {
   </button>
   <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> 
     <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
+    <span className="Name"></span>
   </button>
 <div  className="img-detail-select">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className=" btn btn-outline" aria-current="true" aria-label="Slide 1"> <img src={products.productImgs?.[0]} class="d-block w-100" alt="..."/></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" className="btn btn-outline"aria-label="Slide 2"> <img src={products.productImgs?.[1]} class="d-block w-100" alt="..."/></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" className="btn btn-outline"aria-label="Slide 3"> <img src={products.productImgs?.[2]} class="d-block w-100" alt="..."/></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className=" btn btn-outline" aria-current="true" aria-label="Slide 1"> <img src={products.productImgs?.[0]} className="d-block w-100" alt="..."/></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" className="btn btn-outline"aria-label="Slide 2"> <img src={products.productImgs?.[1]} className="d-block w-100" alt="..."/></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" className="btn btn-outline"aria-label="Slide 3"> <img src={products.productImgs?.[2]} className="d-block w-100" alt="..."/></button>
   </div>
 </div>
       
@@ -72,12 +84,12 @@ const ProductDetail = () => {
             <p>$ {products.price}</p>
             <div className="add" >
               <button>-</button>
-              <p>1</p>
+              <input className="quantity-addcart" type="number" onChange={e=>setQuantity(e.target.value)} value={quantity} />
               <button>+</button>
             </div>
             </div>
           </div>
-          <button className="add-to-cart" ><strong> Add to cart</strong> <img src={cartAdd} alt="" /></button>
+          <button className="add-to-cart" onClick={addProductsCart}><strong> Add to cart</strong> <img src={cartAdd} alt="" /></button>
         </div>
       </Row>
         </div>
@@ -104,9 +116,12 @@ const ProductDetail = () => {
                   <p>Price</p>
                 </div>
                 <p>$ {products.price}</p>
-              </div>
-              <div className="cart">
+              <div className="cart" >
+                <button  onClick={addProductsCart}>
                     <img src={cart} alt="" />
+
+                </button>
+              </div>
                   </div>
             </div>
           ))}

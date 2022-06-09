@@ -83,15 +83,18 @@ background-color: red ;
 .add{
   display: flex;
   margin-right: 50px;
+  align-items: center;
 }
-.add p{
-  margin:0 8px;
-}
+
 .contador{
   display: flex;
   align-items: baseline;
   justify-content: space-between;
  
+}
+.quantity-addcart{
+  width:30px;
+  margin: 0 10px;
 }
 .contador button{
   background-color:tomato;
@@ -110,9 +113,11 @@ background-color: red ;
   border-radius:7px;
   box-shadow: -10px -11px 20px -22px rgba(0,0,0,0.95);
 }
-.cart{
+.cart button{
   width: max-content;
-  margin-top: -90px;
+  border: none;
+  background-color:rgba(240, 240, 243, 0.007);
+  margin-bottom: -90px;
   margin-left: 150px;
   
   border-radius: 50px;
@@ -156,7 +161,7 @@ background-color: red ;
  
  width: max-content;
  padding: 5px;
- margin:20px 10px;
+ margin:-15px 10px;
 }
 .row{
   justify-content: space-evenly;

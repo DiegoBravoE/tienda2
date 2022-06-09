@@ -34,4 +34,7 @@ export const filterCategory = (id) => (dispatch) => {
         .then(res => dispatch(setProducts(res.data.data.products)))
         .finally(() => dispatch(setIsLoading(false)));
 }
+
+
+
 export default productsSlice.reducer;

@@ -24,4 +24,17 @@ export const getCart = () => (dispatch) => {
         .then(res => dispatch(setCart(res.data.data.cart.products)))
         .finally(() => dispatch(setIsLoading(false)));
 }
+export const addToCart = (addproduct) => (dispatch) => {
+    dispatch(setIsLoading(true));
+    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/cart`,addproduct,getConfig())
+        .then(() =>{
+             dispatch(getCart())
+            alert("Se añadio el producto con exito")
+            })
+        .catch(error=>console.log(error.response))
+        .finally(() => dispatch(setIsLoading(false)));
+}
+
+
+
 export default cartSlice.reducer;

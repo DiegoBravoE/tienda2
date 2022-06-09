@@ -55,7 +55,7 @@ const NavBar = () => {
         <a href="/#/purchases"><button className="button"> <img src={purchasing} alt="" /> </button></a>
         </li>
         <li className="nav-item">
-        <a href=""><button className="button" onClick={handleShow} > <img src={cartNavBar} alt="" /> </button></a>
+        <a  href="/#/" ><button className="button" onClick={handleShow} > <img src={cartNavBar} alt="" /> </button></a>
         </li>
         
       </ul>

@@ -5,6 +5,7 @@ import {getProducts,filterProducts,filterCategory} from "../store/slices/product
 import { useNavigate } from "react-router-dom";
 import { Col, Row, ListGroup, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
+import { addToCart } from "../store/slices/cart.slice";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ const Home = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
+  
   const filterTitle = () => {
     dispatch(filterProducts(search));
   };
@@ -87,8 +89,11 @@ const Home = () => {
                   </div>
                   <p>$ {product.price}</p>
                 </div>
-                  <div className="cart">
+                <div className="cart" >
+                
                     <img src={cart} alt="" />
+
+                
                   </div>
               </div>
             ))}
