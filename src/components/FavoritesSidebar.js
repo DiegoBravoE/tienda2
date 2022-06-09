@@ -33,6 +33,7 @@ const cart=useSelector((state) => state.cart)
 
             }
             </Offcanvas.Body>
+            <button className="add-cart" ><strong>Buy</strong></button>
       </Offcanvas>
     </div>
   );

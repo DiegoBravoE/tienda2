@@ -5,7 +5,7 @@ import {getProducts,filterProducts,filterCategory} from "../store/slices/product
 import { useNavigate } from "react-router-dom";
 import { Col, Row, ListGroup, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
-import { addToCart } from "../store/slices/cart.slice";
+
 
 const Home = () => {
   const navigate = useNavigate();

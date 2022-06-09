@@ -65,20 +65,22 @@ height: 200px;
 }
 .img-detail-select {
 display: flex;
-justify-content: space-around;
-margin: 10px 0;
+justify-content: center;
+
+}
+.img-detail-select img {
+  margin: 10px 10px;
 }
 .carousel-control-next, .carousel-control-prev{
 height: 30px;
 width: 30px;
 border-radius: 50px;
 margin: 60px;
-
 background-color: red ;
 }
 
 .img-detail-select img {
- height: 60px;
+ height: 50px;
 }
 .add{
   display: flex;
@@ -130,7 +132,15 @@ background-color: red ;
   border: none;
   height: 50px;
 }
-
+.add-cart{
+  margin: auto;
+  letter-spacing: 5px;
+  color: #ffff;
+  width: 60%;
+  background-color: tomato;
+  border: none;
+  height: 50px;
+}
 .img-card img{
   margin: 20px  25px;
   width: 152px;
