@@ -21,14 +21,14 @@ const Purchases = () => {
 
       <div  className="container-card-purchase">
         {purchases.map((purchase) => (
-          <div className="container-purchase">
+          <div key={purchase.id} className="container-purchase">
                 <div className="date-purchase">
              {purchase.createdAt}
                 </div>
 
             {purchase.cart.products.map((product) => (
                 
-  <div className="row align-items-start" style={{ cursor: "pointer" }} onClick={() => navigate(`/product/${product.id}`)} >
+  <div  key={product.id}className="row align-items-start" style={{ cursor: "pointer" }} onClick={() => navigate(`/product/${product.id}`)} >
     <div className="col">
     <h6>{product.title} </h6>
     

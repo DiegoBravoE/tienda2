@@ -1,21 +1,31 @@
-import React, { useEffect } from 'react';
+import React, {  useState } from 'react';
 import logo from '../../src/images/logo.svg'
 import user from '../../src/images/user.svg'
 import purchasing from '../../src/images/purchasing.svg'
 import cartNavBar from '../../src/images/cartNavBar.svg'
 import exit from '../../src/images/exit.svg'
 import lista from '../../src/images/lista.svg'
-import {getCart} from '../store/slices/cart.slice'
-import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import FavoritesSidebar from '../components/FavoritesSidebar';
+
 const NavBar = () => {
 
   const logout= ()=>localStorage.setItem("token","")
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-   dispatch(getCart())
-   console.log("me ejecute")
-   }, [dispatch]);
+
+ const navigate = useNavigate();
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      setShow(true);
+    } else {
+      navigate("/login");
+    }
+  };
 
     return (
 
@@ -45,7 +55,7 @@ const NavBar = () => {
         <a href="/#/purchases"><button className="button"> <img src={purchasing} alt="" /> </button></a>
         </li>
         <li className="nav-item">
-        <a href="/#/"><button className="button"> <img src={cartNavBar} alt="" /> </button></a>
+        <a href=""><button className="button" onClick={handleShow} > <img src={cartNavBar} alt="" /> </button></a>
         </li>
         
       </ul>
@@ -54,6 +64,8 @@ const NavBar = () => {
   </div>
 </nav>
 
+
+<FavoritesSidebar show={show} handleClose={handleClose} />
 </div>
 
 
