@@ -8,34 +8,47 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
-.container-navbar{
-  display: flex;
-  align-items: center;
-  
-}
-.iconos{
-  width: 470px;
-  display: flex;
 
+.iconos{
+  
+  display: flex;
+  justify-content:flex-end
   
 }
-.iconos img{
-  width: 30px;
+ 
+  .navbar-nav .nav-link>img{
+    width: 20px;
+  }
+  .navbar-nav .dropdown-menu {
+    width: max-content;
+    border: none;
+   
+  }
+
+.button.button >img {
+  width: 18px;
 }
-.iconos button{
-  padding:5px;
+.nav-link{
+  margin-right: 40px;
   border: none;
   background-color: #ffff;
-  width: 150px;
+  width: 10px;
 }
-.button:hover {
-  background-color: tomato;
-  transition: 1.5s;
+.navbar-nav .nav-link>img {
+  width: 20px;
+  margin-bottom: 10px;
 }
-.navbar{
-  
-  margin:30px 0;
+.navbar-nav {
+  margin-top: 40px;
 }
+
+.iconos  button{
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 100px;
+}
+
+
 .card-detail{
 display: flex;
 
@@ -44,14 +57,52 @@ display: flex;
 display: flex;
 justify-content: center;
 }
-.img-detail{
-  width: 350px;
-  height: 250px;
-  display: flex;
- margin:auto;
- 
+
+.carousel-inner img{
+  margin: auto;
+width: 200px!important;
+height: 200px;
+}
+.img-detail-select {
+display: flex;
+justify-content: space-around;
+margin: 10px 0;
+}
+.carousel-control-next, .carousel-control-prev{
+height: 30px;
+width: 30px;
+border-radius: 50px;
+margin: 60px;
+
+background-color: red ;
 }
 
+.img-detail-select img {
+ height: 60px;
+}
+.add{
+  display: flex;
+  margin-right: 50px;
+}
+.add p{
+  margin:0 8px;
+}
+.contador{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+ 
+}
+.contador button{
+  background-color:tomato;
+  color:#ffff;
+  border:none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 20px;
+  height: 20px;
+}
 .card{
   margin: 20px 10px;
   width: 250px;
@@ -69,15 +120,15 @@ justify-content: center;
 .add-to-cart{
   letter-spacing: 5px;
   color: #ffff;
-  width: 550px;
+  width: 100%;
   background-color: tomato;
   border: none;
   height: 50px;
 }
 
 .img-card img{
-  margin: 26px;
-  width: 172px;
+  margin: 20px  25px;
+  width: 152px;
   height: 164px;
 }
 
@@ -91,21 +142,15 @@ justify-content: center;
  
 }
 .card-login{
-  
-  padding: 15px;
+  border:solid 1px black;
+  border-radius: 10px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   margin: auto;
   width: 450px;
 }
-.button-login{
-  border: none;
-  border-radius: 5px;
-  background-color:tomato;
-  padding:5px;
-  width:80px;
-  margin: auto;
-}
+
 
 .price{
  
@@ -116,4 +161,34 @@ justify-content: center;
 .row{
   justify-content: space-evenly;
   margin-top: 50px;
+}
+.container-card-purchase{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+.container-purchase{
+
+  width: 700px;
+  margin: 20px 10px;
+  border-radius: 8px;
+  border: solid 1px black;
+}
+.col {
+  margin-left: 30px;
+}
+
+.date-purchase{
+  height:max-content;
+  border-bottom: 1px  solid rgba(0, 0, 0, 0.541);
+}
+@media (min-width: 992px){
+
+  .navbar-expand-lg .navbar-collapse {
+      display: flex!important;
+      flex-basis: auto;
+      justify-content: flex-end;
+  }
+
 }

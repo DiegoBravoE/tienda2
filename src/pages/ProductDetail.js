@@ -30,19 +30,52 @@ const ProductDetail = () => {
     <div>
         <div className="container">
       <Row xs={1} md={2} className="card-detail">
-
-        <div  className="container">
-          
-          <img src={products.productImgs} alt="" className="img-detail" />
-        </div>
+      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
+ <div>
+   
+ </div>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={products.productImgs?.[0]} className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item ">
+      <img src={products.productImgs?.[1]} className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item ">
+      <img src={products.productImgs?.[2]} className="d-block w-100" alt="..."/>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> 
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+<div  className="img-detail-select">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className=" btn btn-outline" aria-current="true" aria-label="Slide 1"> <img src={products.productImgs?.[0]} class="d-block w-100" alt="..."/></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" className="btn btn-outline"aria-label="Slide 2"> <img src={products.productImgs?.[1]} class="d-block w-100" alt="..."/></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" className="btn btn-outline"aria-label="Slide 3"> <img src={products.productImgs?.[2]} class="d-block w-100" alt="..."/></button>
+  </div>
+</div>
+      
         <div>
         <h2>{products.title}</h2>
           <Card.Text>{products.description}</Card.Text>
-          <div className="price">
-            <div>
+          <div className="body-price">
+
               <p>Price</p>
-            </div>
+          <div className="contador" >
+            
+           
             <p>$ {products.price}</p>
+            <div className="add" >
+              <button>-</button>
+              <p>1</p>
+              <button>+</button>
+            </div>
+            </div>
           </div>
           <button className="add-to-cart" ><strong> Add to cart</strong> <img src={cartAdd} alt="" /></button>
         </div>

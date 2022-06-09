@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import cart from '../images/cart.svg';
-import {
-  getProducts,
-  filterProducts,
-  filterCategory,
-} from "../store/slices/products.slice";
+import {getProducts,filterProducts,filterCategory} from "../store/slices/products.slice";
 import { useNavigate } from "react-router-dom";
 import { Col, Row, ListGroup, InputGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
@@ -57,13 +53,13 @@ const Home = () => {
               value={search}
               type="text"
               className="form-control"
-              placeholder="Recipient's username"
-              aria-label="Recipient's username"
+              placeholder="Search by Products"
+              aria-label="Search by Products"
               aria-describedby="button-addon2"
             />
             <button
               onClick={filterTitle}
-              className="btn btn-outline-secondary"
+              className="btn btn-danger"
               type="button"
               id="button-addon2"
             >

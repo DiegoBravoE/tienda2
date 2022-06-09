@@ -20,7 +20,7 @@ const submit=(data)=>{
     
     .catch(error =>{
         console.log(error.response.status)
-        if(error.response.status===401)
+        if(error.response.status===404)
         alert("credenciales incorrectas")
     
     })
@@ -28,9 +28,10 @@ const submit=(data)=>{
 }
 
     return (
-        <div className="card-login">
-
+        <div >
         <form onSubmit={handleSubmit(submit)} className='card-login' >
+<p>User : mason@gmail.com</p>
+<p>Password : mason1234</p>
  <div className="row mb-3">
     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
     <div className="col-sm-10">
@@ -43,7 +44,7 @@ const submit=(data)=>{
       <input type="password"{...register("password")} className="form-control" id="inputPassword3"/>
     </div>
     </div>
-    <button type="submit" className="button-login">Sign in</button>
+    <button type="submit" className="btn btn-success">Sign in</button>
 </form>
         </div>
     );
