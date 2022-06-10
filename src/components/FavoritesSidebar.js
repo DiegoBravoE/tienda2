@@ -1,10 +1,12 @@
 import React from "react";
 import { Offcanvas } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { buy } from "../store/slices/cart.slice";
 
 const FavoritesSidebar = ({ show, handleClose }) => {
 const navigate = useNavigate();
+const dispatch = useDispatch();
 const cart=useSelector((state) => state.cart)
 
   return (
@@ -33,7 +35,7 @@ const cart=useSelector((state) => state.cart)
 
             }
             </Offcanvas.Body>
-            <button className="add-cart" ><strong>Buy</strong></button>
+            <button onClick={()=>dispatch(buy())} className="add-cart" ><strong>Buy</strong></button>
       </Offcanvas>
     </div>
   );

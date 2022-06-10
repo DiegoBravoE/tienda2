@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPurchase } from "../store/slices/Purchase.slice";
 
+
 const Purchases = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const purchases = useSelector((state) => state.purchase);
-
+  
   useEffect(() => {
     dispatch(getPurchase());
   }, [dispatch]);
@@ -23,7 +24,7 @@ const Purchases = () => {
         {purchases.map((purchase) => (
           <div key={purchase.id} className="container-purchase">
                 <div className="date-purchase">
-             {purchase.createdAt}
+             {purchase.createAd}
                 </div>
 
             {purchase.cart.products.map((product) => (

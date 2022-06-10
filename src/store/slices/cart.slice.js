@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { setIsLoading } from './isLoading.slice';
 import axios from 'axios'
 import getConfig from '../../utils/getConfig';
+import { getPurchase } from './Purchase.slice';
 
 
 
@@ -26,7 +27,7 @@ export const getCart = () => (dispatch) => {
 }
 export const addToCart = (addproduct) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/cart`,addproduct,getConfig())
+    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchases`,addproduct,getConfig())
         .then(() =>{
              dispatch(getCart())
             alert("Se añadio el producto con exito")
@@ -34,7 +35,16 @@ export const addToCart = (addproduct) => (dispatch) => {
         .catch(error=>console.log(error.response))
         .finally(() => dispatch(setIsLoading(false)));
 }
+export const buy = () => (dispatch) => {
+    dispatch(setIsLoading(true));
+    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchase`,{},getConfig())
+        .then(() => {
+            dispatch(getPurchase())
+           dispatch(setCart([]))  
 
+})
+        .finally(() => dispatch(setIsLoading(false)));
+}
 
 
 export default cartSlice.reducer;
