@@ -24,7 +24,7 @@ const Purchases = () => {
         {purchases.map((purchase) => (
           <div key={purchase.id} className="container-purchase">
                 <div className="date-purchase">
-             {purchase.createdAd}
+             {purchase.createdAt}
                 </div>
 
             {purchase.cart.products.map((product) => (
