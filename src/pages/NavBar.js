@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import logo from '../../src/images/logo.svg'
 import user from '../../src/images/user.svg'
 import purchasing from '../../src/images/purchasing.svg'
@@ -7,11 +7,12 @@ import exit from '../../src/images/exit.svg'
 import lista from '../../src/images/lista.svg'
 import { useNavigate } from 'react-router-dom';
 import FavoritesSidebar from '../components/FavoritesSidebar';
-
+import {useDispatch} from 'react-redux'
+import { getCart } from '../store/slices/cart.slice';
 const NavBar = () => {
 
   const logout= ()=>localStorage.setItem("token","")
-
+const dispatch = useDispatch();
 
  const navigate = useNavigate();
 
@@ -26,7 +27,9 @@ const NavBar = () => {
       navigate("/login");
     }
   };
-
+useEffect(() => {
+  dispatch(getCart())
+ }, [])
     return (
 
 <div >

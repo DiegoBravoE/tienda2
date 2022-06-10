@@ -27,7 +27,7 @@ export const getCart = () => (dispatch) => {
 }
 export const addToCart = (addproduct) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchases`,addproduct,getConfig())
+    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/cart`,addproduct,getConfig())
         .then(() =>{
              dispatch(getCart())
             alert("Se añadio el producto con exito")
@@ -37,7 +37,7 @@ export const addToCart = (addproduct) => (dispatch) => {
 }
 export const buy = () => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchase`,{},getConfig())
+    return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchases`,{},getConfig())
         .then(() => {
             dispatch(getPurchase())
            dispatch(setCart([]))  
