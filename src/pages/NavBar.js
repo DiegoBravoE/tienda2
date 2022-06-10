@@ -29,7 +29,7 @@ const dispatch = useDispatch();
   };
 useEffect(() => {
   dispatch(getCart())
- }, [])
+ }, [dispatch])
     return (
 
 <div >
