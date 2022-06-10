@@ -1,5 +1,5 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Home, Purchases, Login, ProductDetail,NavBar } from "./pages";
+import { Home, Purchases, Login, ProductDetail,NavBar,Footer } from "./pages";
 import { LoadingScreen,ProtectedRoutes } from "./components";
 import { Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -24,6 +24,7 @@ function App() {
             </Route>
           </Routes>
         </Container>
+        <Footer/>
       </HashRouter>
     </div>
   );

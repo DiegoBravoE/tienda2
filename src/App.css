@@ -204,6 +204,18 @@ background-color: red ;
   height:max-content;
   border-bottom: 1px  solid rgba(0, 0, 0, 0.541);
 }
+.footer{
+ 
+  margin-top: 60px;
+  background-color:rgba(128, 128, 128, 0.568);
+}
+.footer p{
+  color:white;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 80px;
+}
 @media (min-width: 992px){
 
   .navbar-expand-lg .navbar-collapse {
