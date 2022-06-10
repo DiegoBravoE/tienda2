@@ -15,6 +15,12 @@
   justify-content:flex-end
   
 }
+.iconos  button{
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 100px;
+}
+
  
   .navbar-nav .nav-link>img{
     width: 20px;
@@ -24,9 +30,13 @@
     border: none;
    
   }
-
+.nav-item img{
+  width: 18px;
+  margin-left: 78px;
+}
 .button.button >img {
   width: 18px;
+  
 }
 .nav-link{
   margin-right: 40px;
@@ -42,22 +52,13 @@
   margin-top: 40px;
 }
 
-.iconos  button{
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  width: 100px;
-}
-
-
 .card-detail{
 display: flex;
-
 }
 .card-detail h1{
 display: flex;
 justify-content: center;
 }
-
 .carousel-inner img{
   margin: auto;
 width: 200px!important;
@@ -146,15 +147,12 @@ background-color: red ;
   width: 152px;
   height: 164px;
 }
-
-
 .title{
   height: min-content;
   border-bottom: 1px  solid rgba(0, 0, 0, 0.541);
 }
 .description::-webkit-scrollbar{
   width: 9px;
- 
 }
 .card-login{
   border:solid 1px black;
@@ -165,8 +163,6 @@ background-color: red ;
   margin: auto;
   width: 450px;
 }
-
-
 .price{
  
  width: max-content;

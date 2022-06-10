@@ -14,7 +14,7 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
-const [quantity,setQuantity]= useState("1")
+const [quantity,setQuantity]= useState(1)
 
   const productsList = useSelector((state) => state.products);
   useEffect(() => {
@@ -83,9 +83,11 @@ console.log(addproduct)
            
             <p>$ {products.price}</p>
             <div className="add" >
-              <button>-</button>
-              <input className="quantity-addcart" type="number" onChange={e=>setQuantity(e.target.value)} value={quantity} />
-              <button>+</button>
+              <button onClick={()=>{setQuantity(quantity-1)}}>-</button>
+              
+                <input className="quantity-addcart" type="text" onChange={e=>setQuantity(e.target.value)} value={quantity} />
+               
+              <button onClick={()=>{setQuantity(quantity+1)}}>+</button>
             </div>
             </div>
           </div>
