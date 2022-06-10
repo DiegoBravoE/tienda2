@@ -77,7 +77,7 @@ const Home = () => {
                 onClick={() => navigate(`/product/${product.id}`)}
               >
                 <div>
-                  <h4 className="title">{product.title}</h4>
+                  <h6 className="title">{product.title}</h6>
                   <div className="img-card">
                     <img src={product.productImgs} alt="" />
                   </div>
@@ -89,12 +89,10 @@ const Home = () => {
                   </div>
                   <p>$ {product.price}</p>
                 </div>
-                <div className="cart" >
-                
+                <div  className="cart-home">
                     <img src={cart} alt="" />
 
-                
-                  </div>
+                </div>
               </div>
             ))}
           </Row>

@@ -30,6 +30,7 @@ const cart=useSelector((state) => state.cart)
                     <p>{itemCart.price}</p>
                     </div>
                     
+                
                   </div>
                 ))
 

@@ -41,7 +41,7 @@ export const buy = () => (dispatch) => {
         .then(() => {
             dispatch(getPurchase())
            dispatch(setCart([]))  
-
+          alert("la compra se realizo con exito")
 })
         .finally(() => dispatch(setIsLoading(false)));
 }

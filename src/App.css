@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@1&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  font-family:Tiro;
 }
 .container{
   margin-top: 20px;
@@ -118,7 +121,12 @@ background-color: red ;
   border-radius:7px;
   box-shadow: -10px -11px 20px -22px rgba(0,0,0,0.95);
 }
-.cart button{
+.cart-home{
+  margin-bottom: -90px;
+  margin-left: 150px;
+  
+}
+.cart button {
   width: max-content;
   border: none;
   background-color:rgba(240, 240, 243, 0.007);
@@ -150,7 +158,7 @@ background-color: red ;
   height: 164px;
 }
 .title{
-  height: min-content;
+  height: max-content;
   border-bottom: 1px  solid rgba(0, 0, 0, 0.541);
 }
 .description::-webkit-scrollbar{

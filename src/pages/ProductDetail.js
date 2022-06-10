@@ -106,7 +106,7 @@ console.log(addproduct)
               onClick={() => navigate(`/product/${productItem.id}`)}
             >
               <div>
-                <h4 className="title">{productItem.title}</h4>
+                <h5 className="title">{productItem.title}</h5>
 
                 <div className="img-card">
                   <img src={productItem.productImgs} alt="" />
